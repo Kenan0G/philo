@@ -6,7 +6,7 @@
 #    By: kgezgin <kgezgin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 14:33:56 by kgezgin           #+#    #+#              #
-#    Updated: 2023/09/04 14:46:28 by kgezgin          ###   ########.fr        #
+#    Updated: 2023/09/05 00:41:38 by kgezgin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,19 @@ SRCS_DIR = $(shell find srcs -type d)
 
 vpath %.c $(foreach dir, $(SRCS_DIR), $(dir))
 SRCS =	main.c\
-		philo.c
+		check_args.c\
+		cleaning.c\
+		death.c\
+		eat_sleep.c\
+		routine.c\
+		utils_2.c\
+		utils.c
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:%.c=%.o))
 
 DEPS = $(OBJS:%.o=%.d)
 
-NAME = philo
+NAME = philosophers
 NORM = norminette
 
 ########################### COMPILATION AND FLAGS ###########################
